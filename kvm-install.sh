@@ -12,7 +12,7 @@ sudo apt-get -y upgrade
 echo "Installing Required Packages for KVM"
 echo "------------------------------------"
 
-sudo apt-get -y install qemu-kvm libvirt-daemon-system virtinst libvirt-clients bridge-utils
+sudo apt-get -y install qemu-kvm libvirt-daemon-system virtinst libvirt-clients bridge-utils genisoimage
 
 echo "Enabling virtualization Services"
 echo "--------------------------------"
