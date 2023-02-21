@@ -65,8 +65,8 @@ arp -n
 
 echo "<network>
   <name>host-bridge</name>
-  <forward mode="bridge"/>
-  <bridge name="br0"/>
+  <forward mode="'"bridge"'"/>
+  <bridge name="'"br0"'"/>
 </network>" | sudo tee /tmp/host-bridge.xml > /dev/null
 
 # create libvirt network using existing host bridge
