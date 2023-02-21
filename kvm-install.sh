@@ -47,7 +47,8 @@ echo "network:
       routes:
       - to: default
         via: 192.168.1.1
-  version: 2" | sudo tee /etc/netplan/00-installer-config.yaml
+  version: 2" | sudo tee /etc/netplan/00-installer-config.yaml > /dev/null
+  
 sudo netplan generate
 sudo netplan --debug apply
 # bridge control
@@ -66,7 +67,8 @@ echo "<network>
   <name>host-bridge</name>
   <forward mode="bridge"/>
   <bridge name="br0"/>
-</network>" | sudo tee /tmp/host-bridge.xml
+</network>" | sudo tee /tmp/host-bridge.xml > /dev/null
+
 # create libvirt network using existing host bridge
 virsh net-define /tmp/host-bridge.xml
 virsh net-start host-bridge
