@@ -84,4 +84,8 @@ sudo apt-get -y install cockpit cockpit-machines
 sudo systemctl start cockpit
 sudo systemctl status cockpit
 
+echo "Customizing qemu settings"
+echo "-------------------------"
+echo "security_driver = "'"none"'"" | sudo tee -a /etc/libvirt/qemu.conf
+
 echo -e "Now you can access your Cockpit Server at ===> ${GREEN}https://`ip addr | grep eno1 | grep inet | awk {'print $2'} | awk -F/ {'print $1'}`:9090${NC}"
