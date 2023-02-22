@@ -77,6 +77,9 @@ virsh net-autostart host-bridge
 # state should be active, autostart, and persistent
 virsh net-list --all
 
+# Disabling IPv6
+sudo sysctl -w net.ipv6.conf.br0.disable_ipv6=1
+
 echo "Installing Required Packages for Cockpit"
 echo "----------------------------------------"
 
