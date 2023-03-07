@@ -94,8 +94,8 @@ echo "security_driver = "'"none"'"" | sudo tee -a /etc/libvirt/qemu.conf
 echo "Installing Minikube"
 echo "-------------------"
 
-wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -O /usr/local/bin/minikube
-chmod +x /usr/local/bin/minikube
+sudo wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -O /usr/local/bin/minikube
+sudo chmod +x /usr/local/bin/minikube
 minikube version
 
 sudo wget https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl
