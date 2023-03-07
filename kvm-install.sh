@@ -91,4 +91,16 @@ echo "Customizing qemu settings"
 echo "-------------------------"
 echo "security_driver = "'"none"'"" | sudo tee -a /etc/libvirt/qemu.conf
 
+echo "Installing Minikube"
+echo "-------------------"
+
+wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -O /usr/local/bin/minikube
+chmod +x /usr/local/bin/minikube
+minikube version
+
+sudo wget https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl
+sudo chmod +x /usr/local/bin/kubectl
+
+minikube start
+
 echo -e "Now you can access your Cockpit Server at ===> ${GREEN}https://`ip addr | grep eno1 | grep inet | awk {'print $2'} | awk -F/ {'print $1'}`:9090${NC}"
